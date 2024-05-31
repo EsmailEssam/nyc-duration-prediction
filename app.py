@@ -15,18 +15,18 @@ def home():
 
 @app.route("/", methods=["GET", "POST"])
 def predict():
+    if request.method == 'POST':
+        passenger_count = float(request.form.get("passenger_count", False))
+        trip_distance = float(request.form.get("trip_distance", False))
+        PULocationID = float(request.form.get("pull_location_id", False))
+        DOLocationID = float(request.form.get("down_location_id", False))
+        total_amount = float(request.form.get("total_amount", False))
 
-    passenger_count = float(request.form["passenger_count"])
-    trip_distance = float(request.form["trip_distance"])
-    PULocationID = float(request.form["pull_location_id"])
-    DOLocationID = float(request.form["down_location_id"])
-    total_amount = float(request.form["total_amount"])
+        test_input = [
+            [passenger_count, trip_distance, PULocationID, DOLocationID, total_amount]
+        ]
 
-    test_input = [
-        [passenger_count, trip_distance, PULocationID, DOLocationID, total_amount]
-    ]
-
-    prediction = round(duration_model.predict(test_input)[0], 2)
+        prediction = round(duration_model.predict(test_input)[0], 2)
 
     return render_template("index.html", prediction=prediction)
 
