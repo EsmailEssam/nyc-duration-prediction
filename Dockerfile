@@ -12,5 +12,11 @@ WORKDIR /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Run app.py when the container launches
-CMD ["python","app.py"]
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Define environment variable to tell Flask to run the app
+ENV FLASK_APP=app.py
+
+# Command to run the application
+CMD ["flask", "run", "--host=0.0.0.0"]
