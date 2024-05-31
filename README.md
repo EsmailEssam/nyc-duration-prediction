@@ -45,15 +45,17 @@ flask run
 ### Docker
 1. Build the Docker image:
 ```sh
-docker build -t duration-prediction .
+docker build -t esmailessam/duration-prediction .
 ```
 2. Run the Docker container:
 ```sh
-docker run -p 5000:5000 duration-prediction
+docker run -p 5000:5000 esmailessam/duration-prediction
 ```
 ### Render Web Service
 1. Push the Docker image to a container registry (e.g., Docker Hub).
-
+```sh
+docker push esmailessam/duration-prediction:latest
+```
 2. Follow Render's documentation to deploy a Docker-based web service:
   - Create a new web service on Render.
   - Use the Docker image from your container registry.
