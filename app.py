@@ -5,7 +5,7 @@ import pickle
 app = Flask(__name__)
 
 # Load model
-duration_model = pickle.load(open("Models/duration-prediction.sav", "rb"))
+duration_model = pickle.load(open("models/duration-prediction.sav", "rb"))
 
 
 @app.route("/")
@@ -32,4 +32,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
