@@ -15,7 +15,7 @@ def home():
 
 @app.route("/", methods=["GET", "POST"])
 def predict():
-    if request.method == 'POST':
+    if request.method == "POST":
         passenger_count = float(request.form.get("passenger_count", False))
         trip_distance = float(request.form.get("trip_distance", False))
         PULocationID = float(request.form.get("pull_location_id", False))
@@ -32,4 +32,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True)
