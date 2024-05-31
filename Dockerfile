@@ -4,10 +4,10 @@ FROM python:3.9-slim
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-RUN pip install --upgrade pip
-
 # Set the working directory in the container
 WORKDIR /app
+
+RUN pip install --upgrade pip
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
