@@ -59,6 +59,8 @@ docker push esmailessam/duration-prediction:latest
 2. Follow Render's documentation to deploy a Docker-based web service:
   - Create a new web service on Render.
   - Use the Docker image from your container registry.
+  - You can try my model on this link:
+    https://duration-prediction.onrender.com/
 
 ## Contributing
 Contributions are welcome! If you have any suggestions or improvements, feel free to create a pull request or open an issue.
